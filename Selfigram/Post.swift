@@ -18,3 +18,4 @@ class Post {
         self.user = user
         self.comment = comment
     }
+}
