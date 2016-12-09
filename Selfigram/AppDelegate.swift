@@ -6,19 +6,53 @@
 //  Copyright © 2016 Liz Demer. All rights reserved.
 //
 
+
+
 import UIKit
+
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        
+        // Initialize Parse.
+        // Replace XXXX with the App ID and Server URL that you recieved
+        let configuration = ParseClientConfiguration { clientConfiguration in
+            clientConfiguration.applicationId = "0f105d0a"
+            clientConfiguration.server = "https://ios-oken-pt-parse-server-3.herokuapp.com/parse"
+        }
+        Post.registerSubclass()
+        Parse.initialize(with: configuration)
+        
+        //let testObject = PFObject(className: "TestObject")
+        //testObject["foo"] = "bar"
+        //testObject.saveInBackground(block: { (success: Bool, error: Error?) -> Void in
+            //print("Object has been saved.")
+        let user = PFUser()
+        let username = "Liz"
+        let password = "password"
+        user.username = username
+        user.password = password
+        user.signUpInBackground(block: { (success, error) -> Void in
+            if success {
+                print("successfully signuped a user")
+            }else {
+                PFUser.logInWithUsername(inBackground: username, password: password, block: { (user, error) -> Void in
+                    if let user = user {
+                        print("successfully logged in \(user)")
+                    }
+                })
+            }
+        })
+    
+    return true
     }
-
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -43,4 +77,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

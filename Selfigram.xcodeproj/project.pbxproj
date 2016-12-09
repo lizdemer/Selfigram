@@ -19,6 +19,7 @@
 		6DA082441DDC0AEC00BB895B /* SelfigramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA082431DDC0AEC00BB895B /* SelfigramTests.swift */; };
 		6DA0824F1DDC0AEC00BB895B /* SelfigramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0824E1DDC0AEC00BB895B /* SelfigramUITests.swift */; };
 		6DF7769A1DDEB9DF007486CF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF776991DDEB9DF007486CF /* ProfileViewController.swift */; };
+		86718D030F10825AC20A6877 /* Pods_Selfigram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF2BE8CD47EF4A54C894EE5 /* Pods_Selfigram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		394A49388FE8294D64CD3C14 /* Pods-Selfigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfigram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selfigram/Pods-Selfigram.release.xcconfig"; sourceTree = "<group>"; };
 		6136A4231DE5519900DC0E71 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6136A4251DE5519F00DC0E71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6155A59A1DE7F432006D0361 /* Selfigram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selfigram-Bridging-Header.h"; sourceTree = "<group>"; };
 		6155A5A11DE7F61D006D0361 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../FeedViewController.swift; sourceTree = "<group>"; };
 		6160DE071DEE866100960032 /* SelfieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieCell.swift; sourceTree = "<group>"; };
+		6CF2BE8CD47EF4A54C894EE5 /* Pods_Selfigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selfigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA0822B1DDC0AEC00BB895B /* Selfigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA0822E1DDC0AEC00BB895B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DA082301DDC0AEC00BB895B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		6DA0824E1DDC0AEC00BB895B /* SelfigramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfigramUITests.swift; sourceTree = "<group>"; };
 		6DA082501DDC0AEC00BB895B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF776991DDEB9DF007486CF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		887F61984E9367FB936F93F0 /* Pods-Selfigram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfigram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selfigram/Pods-Selfigram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86718D030F10825AC20A6877 /* Pods_Selfigram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035981752A9AF9748B485D9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				887F61984E9367FB936F93F0 /* Pods-Selfigram.debug.xcconfig */,
+				394A49388FE8294D64CD3C14 /* Pods-Selfigram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6DA082221DDC0AEC00BB895B = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +106,8 @@
 				6DA082421DDC0AEC00BB895B /* SelfigramTests */,
 				6DA0824D1DDC0AEC00BB895B /* SelfigramUITests */,
 				6DA0822C1DDC0AEC00BB895B /* Products */,
+				035981752A9AF9748B485D9F /* Pods */,
+				8187C753C7E9313C6A4D77E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +158,14 @@
 			path = SelfigramUITests;
 			sourceTree = "<group>";
 		};
+		8187C753C7E9313C6A4D77E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CF2BE8CD47EF4A54C894EE5 /* Pods_Selfigram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DA082531DDC0AEC00BB895B /* Build configuration list for PBXNativeTarget "Selfigram" */;
 			buildPhases = (
+				A0772740CE3E8EAF75CD7168 /* [CP] Check Pods Manifest.lock */,
 				6DA082271DDC0AEC00BB895B /* Sources */,
 				6DA082281DDC0AEC00BB895B /* Frameworks */,
 				6DA082291DDC0AEC00BB895B /* Resources */,
+				44D075A11B8DD134DBD950FF /* [CP] Embed Pods Frameworks */,
+				F27A23AB4A62D793FF4BA0E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +298,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44D075A11B8DD134DBD950FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Selfigram/Pods-Selfigram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0772740CE3E8EAF75CD7168 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F27A23AB4A62D793FF4BA0E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Selfigram/Pods-Selfigram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6DA082271DDC0AEC00BB895B /* Sources */ = {
@@ -433,6 +508,7 @@
 		};
 		6DA082541DDC0AEC00BB895B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 887F61984E9367FB936F93F0 /* Pods-Selfigram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -448,6 +524,7 @@
 		};
 		6DA082551DDC0AEC00BB895B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394A49388FE8294D64CD3C14 /* Pods-Selfigram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
