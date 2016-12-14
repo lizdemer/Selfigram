@@ -12,9 +12,9 @@ import Parse
 class FeedViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var posts = [Post]()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    
+    func getPosts() {
         if let query = Post.query() {
             query.order(byDescending: "createdAt")
             query.includeKey("user")
@@ -29,7 +29,36 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
             })
         }
     }
+    
+    
+    @IBAction func doubleTappedSelfie(_ sender: UITapGestureRecognizer) {
+        
+        // get the location (x,y) position on our tableView where we have clicked
+        let tapLocation = sender.location(in: tableView)
+        
+        // based on the x, y position we can get the indexPath for where we are at
+        if let indexPathAtTapLocation = tableView.indexPathForRow(at: tapLocation){
+            
+            // based on the indexPath we can get the specific cell that is being tapped
+            let cell = tableView.cellForRow(at: indexPathAtTapLocation) as! SelfieCell
+            
+            //run a method on that cell.
+            cell.tapAnimation()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getPosts()
+        
+    }
+    
+    @IBAction func refreshPulled(sender: UIRefreshControl) {
+        getPosts()
+    }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,29 +73,40 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         return self.posts.count
     }
     
+    //override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! SelfieCell
+        
+        //let post = self.posts[indexPath.row]
+        
+        // I've added this line to prevent flickering of images
+        // We are inside the cellForRowAtIndexPath method that gets called everything we lay out a cell
+        // This always resets the image to blank, waits for the image to download, and then sets it
+        //cell.selfieImageView.image = nil
+        
+        //let imageFile = post.image
+        //imageFile.getDataInBackground(block: {(data, error) -> Void in
+            //if let data = data {
+                //let image = UIImage(data: data)
+                //cell.selfieImageView.image = image
+            //}
+        //})
+        
+        //cell.usernameLabel.text = post.user.username
+        //cell.commentLabel.text = post.comment
+        
+        //return cell
+    //}
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! SelfieCell
         
         let post = self.posts[indexPath.row]
         
-        // I've added this line to prevent flickering of images
-        // We are inside the cellForRowAtIndexPath method that gets called everything we lay out a cell
-        // This always resets the image to blank, waits for the image to download, and then sets it
-        cell.selfieImageView.image = nil
-        
-        let imageFile = post.image
-        imageFile.getDataInBackground(block: {(data, error) -> Void in
-            if let data = data {
-                let image = UIImage(data: data)
-                cell.selfieImageView.image = image
-            }
-        })
-        
-        cell.usernameLabel.text = post.user.username
-        cell.commentLabel.text = post.comment
+        cell.post = post
         
         return cell
     }
+    
     @IBAction func cameraButtonPressed(_ sender: AnyObject) {
         // 1: Create an ImagePickerController
         let pickerController = UIImagePickerController()
@@ -135,6 +175,7 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         //5. Now that we have added a post, reload our table
         tableView.reloadData()
     }
+    
 }
 
 

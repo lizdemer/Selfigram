@@ -24,9 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = ParseClientConfiguration { clientConfiguration in
             clientConfiguration.applicationId = "0f105d0a"
             clientConfiguration.server = "https://ios-oken-pt-parse-server-3.herokuapp.com/parse"
+            //https://ios-oken-pt-parse-server-3.herokuapp.com/dashboard
         }
         Post.registerSubclass()
         Parse.initialize(with: configuration)
+        Activity.registerSubclass()
         
         //let testObject = PFObject(className: "TestObject")
         //testObject["foo"] = "bar"
