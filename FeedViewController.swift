@@ -20,7 +20,7 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
             query.includeKey("user")
             
             query.findObjectsInBackground(block: { (posts, error) -> Void in
-                
+                self.refreshControl?.endRefreshing()
                 if let posts = posts as? [Post]{
                     self.posts = posts
                     self.tableView.reloadData()
@@ -30,6 +30,15 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getPosts()
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
+    }
+    
+    @IBAction func refreshPulled(sender: UIRefreshControl) {
+        getPosts()
+    }
     
     @IBAction func doubleTappedSelfie(_ sender: UITapGestureRecognizer) {
         
@@ -46,20 +55,6 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
             cell.tapAnimation()
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getPosts()
-        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
-    }
-    
-    //@IBAction func refreshPulled(sender: UIRefreshControl) {
-        //getPosts()
-    //}
-    @IBAction func refreshPulled(_ sender: UIRefreshControl) {
-    }
-
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
