@@ -72,11 +72,11 @@
                         <gestureRecognizers/>
                         <color key="sectionIndexBackgroundColor" red="0.47058823529411764" green="1" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="OCx-BT-vxA" customClass="SelfieCell" customModule="Selfigram" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="OCx-BT-vxA" customClass="SelfieCell" customModule="Selfigram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OCx-BT-vxA" id="HPD-Sb-hZx">
-                                    <frame key="frameInset" width="375" height="320"/>
+                                    <frame key="frameInset" width="375" height="319"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TOZ-iI-ezE">
@@ -133,6 +133,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="sdg-vf-arA" id="Etp-tT-bpg"/>
+                                    <outlet property="heartAnimationView" destination="cFv-Vc-fhC" id="Jcx-Ed-jSC"/>
                                     <outlet property="likeButton" destination="IMk-6c-yq0" id="BNn-9q-kqE"/>
                                     <outlet property="selfieImageView" destination="TOZ-iI-ezE" id="tEr-Qj-dmz"/>
                                     <outlet property="usernameLabel" destination="2uc-5B-a3d" id="Fau-9V-Sb4"/>
@@ -155,6 +156,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="aP1-fB-Peb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refreshPulled:" destination="qXQ-0P-bMN" eventType="valueChanged" id="GWn-nF-umP"/>

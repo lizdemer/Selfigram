@@ -50,7 +50,7 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()
-        
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
     }
     
     @IBAction func refreshPulled(sender: UIRefreshControl) {

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
     }
 
     override func didReceiveMemoryWarning() {
